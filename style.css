@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+
+}
+
+.header {
+    background-image: url(fundo-header2.avif);
+    color: rgb(255, 254, 254);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.header h1 {
+    background-color: #0000008f;
+    box-shadow:0 0 10px #000000;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.menu-section {
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.menu-section h2 {
+    color: #ff0000;
+    /*color: var(--secondary-color);*/
+    font-size: 1.8rem;
+    text-shadow:0 0 5px #f7a204;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.menu-items {
+    display: grid;
+    gap: 2rem;
+}
+
+.menu-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+    background: white;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item-image {
+    flex: 0 0 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .item-image img {
+    transform: scale(1.05);
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.item-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-number {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.footer {
+    background-image: url(fundo-header2.avif);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1.5rem; /* Aumentei o padding para mais espaçamento */
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(255, 255, 255, 0.1); /* Linha sutil no topo */
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Overlay mais escuro para melhor contraste */
+    z-index: 1;
+    transition: background 0.3s ease; /* Transição suave para o overlay */
+}
+
+.footer:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Efeito hover para escurecer mais */
+}
+
+.footer p {
+    position: relative;
+    z-index: 2;
+    margin: 0.75rem 0; /* Ajuste no espaçamento */
+    font-size: 1.1rem; /* Tamanho da fonte um pouco maior */
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor legibilidade */
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Efeito hover para links */
+}
+
+.footer a:hover {
+    color: #ffcc00; /* Cor de destaque ao passar o mouse */
+}
+
+.footer .social-links {
+    margin-top: 1.5rem; /* Espaçamento para ícones ou links sociais */
+}
+
+.footer .social-links a {
+    margin: 0 0.75rem; /* Espaçamento entre ícones sociais */
+    font-size: 1.5rem; /* Tamanho dos ícones */
+    display: inline-block;
+    transition: transform 0.3s ease; /* Efeito de escala ao passar o mouse */
+}
+
+.footer .social-links a:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+/* Responsividade */
+@media (min-width: 992px) {
+    .menu-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .menu-section {
+        padding: 1.5rem;
+    }
+
+    .menu-item {
+        flex-direction: column;
+    }
+
+    .item-image {
+        width: 100%;
+        flex: 0 0 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 1rem;
+    }
+
+    .menu-section {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .menu-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .item-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .item-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .price {
+        align-self: flex-start;
+    }
+}
